@@ -1,0 +1,7 @@
+{
+  "name": "FridgeApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
