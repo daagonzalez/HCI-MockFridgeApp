@@ -4,9 +4,14 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { TestPage } from '../pages/home2/home2';
-
+import { FilterPage } from '../pages/filter/filter';
+import { InventoryPage } from '../pages/inventory/inventory';
+import { OrderByPage } from '../pages/orderby/orderby';
+import { RecipesPage } from '../pages/recipes/recipes';
+import { RecipesEditPage } from '../pages/recipes-edit/recipes-edit';
+import { RecipesHuevosPage } from '../pages/recipes-huevosrancheros/recipes-huevosrancheros';
+import { TemperaturePage } from '../pages/temperature-global/temperature-global';
+import { TemperatureSectionPage } from '../pages/temperature-section/temperature-section';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -14,8 +19,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
-    TestPage
+    FilterPage,
+    InventoryPage,
+    OrderByPage,
+    RecipesPage,
+    RecipesEditPage,
+    RecipesHuevosPage,
+    TemperaturePage,
+    TemperatureSectionPage
   ],
   imports: [
     BrowserModule,
@@ -25,8 +36,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
-    TestPage
+    FilterPage,
+    InventoryPage,
+    OrderByPage,
+    RecipesPage,
+    RecipesEditPage,
+    RecipesHuevosPage,
+    TemperaturePage,
+    TemperatureSectionPage
   ],
   providers: [
     StatusBar,

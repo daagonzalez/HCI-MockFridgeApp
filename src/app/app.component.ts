@@ -4,8 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { TestPage } from '../pages/home2/home2';
+import { FilterPage } from '../pages/filter/filter';
+import { InventoryPage } from '../pages/inventory/inventory';
+import { OrderByPage } from '../pages/orderby/orderby';
+import { RecipesPage } from '../pages/recipes/recipes';
+import { RecipesEditPage } from '../pages/recipes-edit/recipes-edit';
+import { RecipesHuevosPage } from '../pages/recipes-huevosrancheros/recipes-huevosrancheros';
+import { TemperaturePage } from '../pages/temperature-global/temperature-global';
+import { TemperatureSectionPage } from '../pages/temperature-section/temperature-section';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +19,7 @@ import { TestPage } from '../pages/home2/home2';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TestPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -22,9 +28,15 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Test', component: TestPage }
+      { title: 'Inicio', component: HomePage },
+      { title: 'Inventario - Filtro', component: FilterPage },
+      { title: 'Inventario', component: InventoryPage },
+      { title: 'Inventario - Ordenar por', component: OrderByPage },
+      { title: 'Recetas', component: RecipesPage },
+      { title: 'Recetas - Editar', component: RecipesEditPage },
+      { title: 'Recetas - Huevos Rancheros', component: RecipesHuevosPage },
+      { title: 'Temperatura Global', component: TemperaturePage },
+      { title: 'Temperatura - sección', component: TemperatureSectionPage }
     ];
 
   }
