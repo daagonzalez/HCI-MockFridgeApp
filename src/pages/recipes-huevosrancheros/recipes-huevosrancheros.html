@@ -3,41 +3,57 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Recetas: Huevos Rancheros</ion-title>
   </ion-navbar>
-  </ion-header>
+</ion-header>
 <ion-content>
-  <div class="fhm_container">
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Inventario</p>
-      </div>
-      <div class="fhm_item">
-        <p>Temperatura</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Recetas</p>
-      </div>
-      <div class="fhm_item">
-        <p>Ajustes de la aplicación</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Proveedores</p>
-      </div>
-      <div class="fhm_item">
-        <p>Pedidos</p>
-      </div>
-    </div>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Nombre</ion-label>
+      <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Ingredientes:</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Tomate
+        </ion-col>
+        <ion-col>
+          250 grs
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Huevos
+        </ion-col>
+        <ion-col>
+          4 unid
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Chile Dulce
+        </ion-col>
+        <ion-col>
+          50 grs
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 </ion-content>
 <ion-footer>
-    <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
-      <!-- <button ion-button>Button2</button> -->
-      <button ion-button icon-start float-end><ion-icon name="information"></ion-icon>Sobre la aplicación</button>
-    </div>
-  </ion-footer>
+  <div class="btn-wrapper">
+    <button ion-button icon-start float-start>
+      <ion-icon name="arrow-round-back"></ion-icon>Atrás
+    </button>
+    <button ion-button icon-start>
+        <ion-icon name="list"></ion-icon>Editar
+    </button>
+    <button ion-button icon-start float-end>
+      <ion-icon name="egg"></ion-icon>Preparar
+    </button>
+  </div>
+</ion-footer>

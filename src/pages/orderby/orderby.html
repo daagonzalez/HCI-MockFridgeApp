@@ -1,43 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
   </ion-header>
-<ion-content>
-  <div class="fhm_container">
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Inventario</p>
-      </div>
-      <div class="fhm_item">
-        <p>Temperatura</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Recetas</p>
-      </div>
-      <div class="fhm_item">
-        <p>Ajustes de la aplicación</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Proveedores</p>
-      </div>
-      <div class="fhm_item">
-        <p>Pedidos</p>
-      </div>
-    </div>
-  </div>
-</ion-content>
-<ion-footer>
+  <ion-content>
+    <strong>
+      <h1>Ordenar por:</h1>
+    </strong>
+    <ion-list>
+      <button ion-item (click)="itemTapped($event, esp)">
+        Nombre del producto
+      </button>
+      <button ion-item (click)="itemTapped($event, esp)">
+        Cantidad actual
+      </button>
+      <button ion-item (click)="itemTapped($event, esp)">
+        Cantidad usual
+      </button>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
     <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
-      <!-- <button ion-button>Button2</button> -->
-      <button ion-button icon-start float-end><ion-icon name="information"></ion-icon>Sobre la aplicación</button>
+      <button ion-button icon-start float-start>
+        <ion-icon name="arrow-round-back"></ion-icon>Atrás
+      </button>
     </div>
   </ion-footer>
+  

@@ -3,41 +3,40 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Recetas</ion-title>
   </ion-navbar>
-  </ion-header>
+</ion-header>
 <ion-content>
-  <div class="fhm_container">
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Inventario</p>
-      </div>
-      <div class="fhm_item">
-        <p>Temperatura</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Recetas</p>
-      </div>
-      <div class="fhm_item">
-        <p>Ajustes de la aplicación</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Proveedores</p>
-      </div>
-      <div class="fhm_item">
-        <p>Pedidos</p>
-      </div>
-    </div>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>Huevos Rancheros</ion-label>
+      <ion-checkbox [(ngModel)]="dataF[0]"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gallo Pinto</ion-label>
+      <ion-checkbox [(ngModel)]="dataF[1]"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Filet Mignon</ion-label>
+      <ion-checkbox [(ngModel)]="dataF[2]"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Pasta Carbonara</ion-label>
+        <ion-checkbox [(ngModel)]="dataF[3]"></ion-checkbox>
+      </ion-item>
+  </ion-list>
 </ion-content>
 <ion-footer>
-    <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
-      <!-- <button ion-button>Button2</button> -->
-      <button ion-button icon-start float-end><ion-icon name="information"></ion-icon>Sobre la aplicación</button>
-    </div>
-  </ion-footer>
+  <div class="btn-wrapper">
+    <button ion-button icon-start float-start>
+      <ion-icon name="arrow-round-back"></ion-icon>Atrás
+    </button>
+    <button ion-button icon-start><ion-icon name="add"></ion-icon>Nueva</button>
+    <button ion-button icon-start float-end>
+      <ion-icon name="remove"></ion-icon>Eliminar
+    </button>
+  </div>
+</ion-footer>

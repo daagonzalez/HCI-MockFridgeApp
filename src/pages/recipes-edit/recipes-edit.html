@@ -1,43 +1,77 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Recetas: Huevos Rancheros</ion-title>
+    </ion-navbar>
   </ion-header>
-<ion-content>
-  <div class="fhm_container">
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Inventario</p>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Nombre</ion-label>
+        <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Ingredientes:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+        <ion-col>
+          <ion-input placeholder="Producto" value="Tomate"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-input placeholder="Cantidad" value="250"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-select [(ngModel)]="units">
+              <ion-option value="g">grs</ion-option>
+              <ion-option value="u">unid</ion-option>
+            </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <ion-input placeholder="Producto" value="Huevos"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-input placeholder="Cantidad" value="4"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-select [(ngModel)]="units2" selected>
+                <ion-option value="g">grs</ion-option>
+                <ion-option value="u">unid</ion-option>
+              </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <ion-input placeholder="Producto" value="Chile Dulce"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-input placeholder="Cantidad" value="50"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-select [(ngModel)]="units">
+                <ion-option value="g">grs</ion-option>
+                <ion-option value="u">unid</ion-option>
+              </ion-select>
+        </ion-col>
+      </ion-row>
+  </ion-content>
+  <ion-footer>
+      <div class="btn-wrapper">
+        <button ion-button icon-start float-start>
+          <ion-icon name="arrow-round-back"></ion-icon>Atrás
+        </button>
+        <button ion-button icon-start>
+          <ion-icon name="close"></ion-icon>Cancelar
+        </button>
+        <button ion-button icon-start float-end>
+          <ion-icon name="checkmark"></ion-icon>Confirmar
+        </button>
       </div>
-      <div class="fhm_item">
-        <p>Temperatura</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Recetas</p>
-      </div>
-      <div class="fhm_item">
-        <p>Ajustes de la aplicación</p>
-      </div>
-    </div>
-    <div class="fhm_row">
-      <div class="fhm_item">
-        <p>Proveedores</p>
-      </div>
-      <div class="fhm_item">
-        <p>Pedidos</p>
-      </div>
-    </div>
-  </div>
-</ion-content>
-<ion-footer>
-    <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
-      <!-- <button ion-button>Button2</button> -->
-      <button ion-button icon-start float-end><ion-icon name="information"></ion-icon>Sobre la aplicación</button>
-    </div>
-  </ion-footer>
+    </ion-footer>
+    
+  

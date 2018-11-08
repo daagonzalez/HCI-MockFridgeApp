@@ -5,23 +5,34 @@
     </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
-  </ion-header>
+</ion-header>
 <ion-content>
-  <strong>Filtrar por:</strong>
+  <strong>
+    <h1>Filtrar por:</h1>
+  </strong>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
+    <button ion-item (click)="itemTapped($event, esp)">
+      <ion-icon name="search" item-start></ion-icon>
+      Producto en específico
+    </button>
+    <button ion-item (click)="itemTapped($event, esp)">
+      <ion-icon name="warning" item-start></ion-icon>
+      Productos faltantes
+    </button>
+    <button ion-item (click)="itemTapped($event, esp)">
+      <ion-icon name="checkmark-circle" item-start></ion-icon>
+      Producto en exceso
+    </button>
+    <button ion-item (click)="itemTapped($event, esp)">
+      <ion-icon name="alert" item-start></ion-icon>
+      Producto agotados
     </button>
   </ion-list>
 </ion-content>
 <ion-footer>
-    <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
-      <!-- <button ion-button>Button2</button> -->
-      <button ion-button icon-start float-end><ion-icon name="information"></ion-icon>Sobre la aplicación</button>
-    </div>
-  </ion-footer>
+  <div class="btn-wrapper">
+    <button ion-button icon-start float-start>
+      <ion-icon name="arrow-round-back"></ion-icon>Atrás
+    </button>
+  </div>
+</ion-footer>

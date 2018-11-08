@@ -8,11 +8,18 @@ import { NavController, NavParams } from 'ionic-angular';
 export class RecipesPage {
   selectedItem: any;
   icons: string[];
+  dataF: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
+
+    this.dataF = [];
+    this.dataF.push("Huevos Rancheros");
+    this.dataF.push("Gallo Pinto");
+    this.dataF.push("Filet Mignon");
+    this.dataF.push("Pasta Carbonara");
 
     // Let's populate this page with some filler content for funzies
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
