@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { RecipesHuevosPage } from '../recipes-huevosrancheros/recipes-huevosrancheros';
+import { RecipesNewPage } from '../recipes-new/recipes-new';
 
 @Component({
   selector: 'recipes',
@@ -7,42 +9,26 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RecipesPage {
   selectedItem: any;
-  icons: string[];
-  dataF: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  recipes: string[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
-    this.dataF = [];
-    this.dataF.push("Huevos Rancheros");
-    this.dataF.push("Gallo Pinto");
-    this.dataF.push("Filet Mignon");
-    this.dataF.push("Pasta Carbonara");
-
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+    this.recipes = ["Huevos Rancheros",
+      "Gallo Pinto",
+      "Filet Mignon",
+      "Pasta Carbonara"];
   }
 
   itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(RecipesPage, {
-      item: item
-    });
+    if (item == "Huevos Rancheros") {
+      this.navCtrl.push(RecipesHuevosPage);
+    }
   }
 
-    goBack = function() {
-      // algo
-    };
+  goBack() {
+    this.navCtrl.pop();
+  }
+
+  toNew() {
+    this.navCtrl.push(RecipesNewPage);
+  }
 }

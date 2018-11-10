@@ -12,6 +12,10 @@ import { RecipesEditPage } from '../pages/recipes-edit/recipes-edit';
 import { RecipesHuevosPage } from '../pages/recipes-huevosrancheros/recipes-huevosrancheros';
 import { TemperaturePage } from '../pages/temperature-global/temperature-global';
 import { TemperatureSectionPage } from '../pages/temperature-section/temperature-section';
+import { RecipesPreparePage } from '../pages/recipes-prepare/recipes-prepare';
+import { RecipesProviderPage } from '../pages/recipes-provider/recipes-provider';
+import { RecipesOrderPage } from '../pages/recipes-order/recipes-order';
+import { RecipesNewPage } from '../pages/recipes-new/recipes-new';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,7 +40,11 @@ export class MyApp {
       { title: 'Recetas - Editar', component: RecipesEditPage },
       { title: 'Recetas - Huevos Rancheros', component: RecipesHuevosPage },
       { title: 'Temperatura Global', component: TemperaturePage },
-      { title: 'Temperatura - sección', component: TemperatureSectionPage }
+      { title: 'Temperatura - sección', component: TemperatureSectionPage },
+      { title: 'Recetas - Preparar', component: RecipesPreparePage },
+      { title: 'Recetas - Proveedores', component: RecipesProviderPage },
+      { title: 'Recetas - Ordenar', component: RecipesOrderPage },
+      { title: 'Recetas - Nueva', component: RecipesNewPage }
     ];
 
   }

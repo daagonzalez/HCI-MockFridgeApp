@@ -39,7 +39,7 @@ export class RecipesEditPage {
     });
   }
 
-    goBack = function() {
-      // algo
-    };
+  goBack() {
+    this.navCtrl.pop();
+  };
 }

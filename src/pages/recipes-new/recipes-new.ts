@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'temperature-section',
-  templateUrl: 'temperature-section.html'
+  selector: 'recipes-new',
+  templateUrl: 'recipes-new.html'
 })
-export class TemperatureSectionPage {
+export class RecipesNewPage {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
@@ -30,7 +30,7 @@ export class TemperatureSectionPage {
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(TemperatureSectionPage, {
+    this.navCtrl.push(RecipesNewPage, {
       item: item
     });
   }

@@ -3,22 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Recetas</ion-title>
+    <ion-title>Recetas: Selección de proveedor</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of recipes" (click)="itemTapped($event, item)">
-      {{item}}
+    <button ion-item *ngFor="let provider of providers" (click)="itemTapped($event, provider.title)">
+      <ion-icon [name]="provider.icon" item-end></ion-icon>
+      {{provider.title}}
     </button>
   </ion-list>
 </ion-content>
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <button (click)="toNew()" ion-button icon-start><ion-icon name="add"></ion-icon>Nueva</button>
+    <button ion-button icon-start><ion-icon name="close"></ion-icon>Cancelar</button>
     <button ion-button icon-start float-end>
-      <ion-icon name="remove"></ion-icon>Eliminar
+      <ion-icon name="add"></ion-icon>Nuevo proveedor
     </button>
   </div>
 </ion-footer>

@@ -9,15 +9,15 @@
 <ion-content>
   <div class="fhm_container">
     <div class="fhm_row">
-      <div class="fhm_item">
+      <div class="fhm_item" (click)="toPage(0)">
         <p>Inventario</p>
       </div>
-      <div class="fhm_item">
+      <div class="fhm_item" (click)="toPage(1)">
         <p>Temperatura</p>
       </div>
     </div>
     <div class="fhm_row">
-      <div class="fhm_item">
+      <div class="fhm_item" (click)="toPage(2)">
         <p>Recetas</p>
       </div>
       <div class="fhm_item">
@@ -36,7 +36,7 @@
 </ion-content>
 <ion-footer>
     <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
+      <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Salir</button>
       <!-- <button ion-button>Button2</button> -->
       <button ion-button icon-start float-end><ion-icon name="information"></ion-icon>Sobre la aplicación</button>
     </div>

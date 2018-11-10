@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FilterPage } from '../filter/filter';
+import { OrderByPage } from '../orderby/orderby';
 
 @Component({
   selector: 'inventory',
@@ -28,14 +30,15 @@ export class InventoryPage {
     }
   }
 
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(InventoryPage, {
-      item: item
-    });
+  toFilter() {
+    this.navCtrl.push(FilterPage);
   }
 
-    goBack = function() {
-      // algo
+  toOrderBy() {
+    this.navCtrl.push(OrderByPage);
+  }
+
+    goBack() {
+      this.navCtrl.pop();
     };
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { RecipesEditPage } from '../recipes-edit/recipes-edit';
+import { RecipesPreparePage } from '../recipes-prepare/recipes-prepare';
 
 @Component({
   selector: 'recipes-huevosrancheros',
@@ -35,7 +37,15 @@ export class RecipesHuevosPage {
     });
   }
 
-    goBack = function() {
-      // algo
-    };
+  goBack() {
+    this.navCtrl.pop();
+  };
+
+  toEdit() {
+    this.navCtrl.push(RecipesEditPage);
+  }
+  
+  toPrepare() {
+    this.navCtrl.push(RecipesPreparePage);
+  }
 }

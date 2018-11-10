@@ -67,8 +67,8 @@
 </ion-content>
 <ion-footer>
     <div class="btn-wrapper">
-      <button ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-      <button ion-button><ion-icon name="funnel"></ion-icon>Filtrar</button>
-      <button ion-button icon-start float-end><ion-icon name="arrow-round-down"></ion-icon>Ordenar por</button>
+      <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
+      <button (click)="toFilter()" ion-button><ion-icon name="funnel"></ion-icon>Filtrar</button>
+      <button (click)="toOrderBy()" ion-button icon-start float-end><ion-icon name="arrow-round-down"></ion-icon>Ordenar por</button>
     </div>
   </ion-footer>

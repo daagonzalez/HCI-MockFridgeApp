@@ -3,19 +3,37 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Recetas: Huevos Rancheros</ion-title>
+    <ion-title>Recetas: Nueva</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-label color="primary">Nombre</ion-label>
-      <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros"></ion-input>
+      <ion-input placeholder="Nombre de la receta"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>Ingredientes:</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col col-md-8>
+      <strong>Ingredientes:</strong>
+    </ion-col>
+    <ion-col col-md-1>
+      <button ion-button small icon-only color="light">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-md-1>
+        <button ion-button small icon-only color="light">
+          <ion-icon name="mic"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-md-1>
+          <button ion-button small icon-only color="light">
+            <ion-icon name="camera"></ion-icon>
+          </button>
+        </ion-col>
+  </ion-row>
+  <ion-list>
     <ion-item>
       <ion-row>
         <ion-col>
@@ -47,11 +65,11 @@
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <button (click)="toEdit()" ion-button icon-start>
-        <ion-icon name="list"></ion-icon>Editar
+    <button ion-button icon-start>
+        <ion-icon name="undo"></ion-icon>Deshacer
     </button>
-    <button (click)="toPrepare()" ion-button icon-start float-end>
-      <ion-icon name="egg"></ion-icon>Preparar
+    <button ion-button icon-start float-end>
+      <ion-icon name="checkmark"></ion-icon>Guardar
     </button>
   </div>
 </ion-footer>

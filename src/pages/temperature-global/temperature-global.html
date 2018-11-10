@@ -92,13 +92,11 @@
 </ion-content>
 <ion-footer>
   <div class="btn-wrapper">
-    <button ion-button icon-start float-start>
-      <ion-icon name="arrow-round-back"></ion-icon>Atrás
-    </button>
-    <button ion-button>
+      <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
+    <!-- <button ion-button>
       <ion-icon name="close"></ion-icon>Cancelar
-    </button>
-    <button ion-button icon-start float-end>
+    </button> -->
+    <button (click)="goBack()" ion-button icon-start float-end>
       <ion-icon name="checkmark"></ion-icon>Confirmar
     </button>
   </div>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { RecipesProviderPage } from '../recipes-provider/recipes-provider';
 
 @Component({
-  selector: 'temperature-section',
-  templateUrl: 'temperature-section.html'
+  selector: 'recipes-prepare',
+  templateUrl: 'recipes-prepare.html'
 })
-export class TemperatureSectionPage {
+export class RecipesPreparePage {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
@@ -30,7 +31,7 @@ export class TemperatureSectionPage {
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(TemperatureSectionPage, {
+    this.navCtrl.push(RecipesPreparePage, {
       item: item
     });
   }
@@ -38,4 +39,8 @@ export class TemperatureSectionPage {
   goBack() {
     this.navCtrl.pop();
   };
+
+  toProviders() {
+    this.navCtrl.push(RecipesProviderPage)
+  }
 }

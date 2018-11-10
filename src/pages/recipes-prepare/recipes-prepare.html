@@ -3,17 +3,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Recetas: Huevos Rancheros</ion-title>
+    <ion-title>Recetas: Preparar</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-label color="primary">Nombre</ion-label>
-      <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros"></ion-input>
+      <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros" readonly></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>Ingredientes:</ion-label>
+      <ion-label color="primary" floating>Ingredientes faltantes:</ion-label>
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
@@ -22,7 +22,7 @@
           Tomate
         </ion-col>
         <ion-col>
-          250 grs
+          100 grs
         </ion-col>
       </ion-row>
       <ion-row>
@@ -30,15 +30,7 @@
           Huevos
         </ion-col>
         <ion-col>
-          4 unid
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          Chile Dulce
-        </ion-col>
-        <ion-col>
-          50 grs
+          2 unid
         </ion-col>
       </ion-row>
     </ion-item>
@@ -47,11 +39,11 @@
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <button (click)="toEdit()" ion-button icon-start>
-        <ion-icon name="list"></ion-icon>Editar
+    <button (click)="goBack()" ion-button icon-start>
+        <ion-icon name="close"></ion-icon>Cancelar
     </button>
-    <button (click)="toPrepare()" ion-button icon-start float-end>
-      <ion-icon name="egg"></ion-icon>Preparar
+    <button (click)="toProviders()" ion-button icon-start float-end>
+      <ion-icon name="arrow-dropright"></ion-icon>Continuar
     </button>
   </div>
 </ion-footer>

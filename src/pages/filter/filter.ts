@@ -35,7 +35,7 @@ export class FilterPage {
     });
   }
 
-    goBack = function() {
-      // algo
-    };
+  goBack() {
+    this.navCtrl.pop();
+  };
 }
