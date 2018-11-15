@@ -32,13 +32,13 @@ export class TemperatureSectionPage {
   };
 
   reduceTemp() {
-    if (this.temperatureS-1 <= this.limitT) {
+    if (this.temperatureS-1 >= this.limitT-2) {
       this.temperatureS--;
     }
   }
 
   increaseTemp() {
-    if (this.temperatureS+1 >= this.limitT) {
+    if (this.temperatureS+1 <= this.limitT+2) {
       this.temperatureS++;
     }
   }

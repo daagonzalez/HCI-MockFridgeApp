@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Temperatura: Verduras</ion-title>
+    <ion-title>Temperatura: {{selectedItem}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-label color="primary">Nombre</ion-label>
-      <ion-input placeholder="Nombre de la sección" value="Verduras"></ion-input>
+      <ion-input placeholder="Nombre de la sección" value="{{selectedItem}}"></ion-input>
     </ion-item>
   </ion-list>
   <ion-row>
