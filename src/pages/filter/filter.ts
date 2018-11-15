@@ -1,38 +1,59 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { InventoryPage } from '../inventory/inventory';
 
 @Component({
   selector: 'filter',
   templateUrl: 'filter.html'
 })
 export class FilterPage {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  inventory: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+    this.inventory = navParams.get("index");
   }
 
   itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(FilterPage, {
-      item: item
-    });
+    var items = this.filterItems(item, this.inventory.items);
+    this.inventory.items = items;
+    this.navCtrl.pop();
+  }
+
+  filterItems(filter, items) {
+    if (filter == "spc") {
+
+    }
+    else if (filter ==  "missing") {
+      items.forEach(item => {
+        if (item.currentAmount < item.usualAmount) {
+          item.visible = true;
+        }
+        else {
+          item.visible = false;
+        }
+      });
+    }
+    else if (filter == "excess") {
+      items.forEach(item => {
+        if (item.currentAmount > item.usualAmount) {
+          item.visible = true;
+        }
+        else {
+          item.visible = false;
+        }
+      });
+    }
+    else if (filter == "out") {
+      items.forEach(item => {
+        if (item.currentAmount == 0) {
+          item.visible = true;
+        }
+        else {
+          item.visible = false;
+        }
+      });
+    }
+    return items;
   }
 
   goBack() {

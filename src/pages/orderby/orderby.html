@@ -3,21 +3,18 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Home</ion-title>
+      <ion-title>Ordenar por:</ion-title>
     </ion-navbar>
   </ion-header>
   <ion-content>
-    <strong>
-      <h1>Ordenar por:</h1>
-    </strong>
     <ion-list>
-      <button ion-item (click)="itemTapped($event, esp)">
+      <button ion-item (click)="itemTapped($event, 'product')">
         Nombre del producto
       </button>
-      <button ion-item (click)="itemTapped($event, esp)">
+      <button ion-item (click)="itemTapped($event, 'currentAmount')">
         Cantidad actual
       </button>
-      <button ion-item (click)="itemTapped($event, esp)">
+      <button ion-item (click)="itemTapped($event, 'usualAmount')">
         Cantidad usual
       </button>
     </ion-list>

@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Temperatura</ion-title>
   </ion-navbar>
 </ion-header>
@@ -36,7 +33,7 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col class="fridge" style="text-align:center" (click)="toTempSection()">
           Verduras
         </ion-col>
       </ion-row>

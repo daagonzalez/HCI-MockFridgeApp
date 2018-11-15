@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { TemperatureSectionPage } from '../temperature-section/temperature-section';
 
 @Component({
   selector: 'temperature-global',
@@ -38,4 +39,8 @@ export class TemperaturePage {
   goBack() {
     this.navCtrl.pop();
   };
+
+  toTempSection() {
+    this.navCtrl.push(TemperatureSectionPage);
+  }
 }

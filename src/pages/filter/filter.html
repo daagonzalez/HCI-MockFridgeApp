@@ -1,29 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Filtrar por:</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <strong>
-    <h1>Filtrar por:</h1>
-  </strong>
   <ion-list>
-    <button ion-item (click)="itemTapped($event, esp)">
+    <button ion-item (click)="itemTapped($event, 'spc')">
       <ion-icon name="search" item-start></ion-icon>
       Producto en específico
     </button>
-    <button ion-item (click)="itemTapped($event, esp)">
+    <button ion-item (click)="itemTapped($event, 'missing')">
       <ion-icon name="warning" item-start></ion-icon>
       Productos faltantes
     </button>
-    <button ion-item (click)="itemTapped($event, esp)">
+    <button ion-item (click)="itemTapped($event, 'excess')">
       <ion-icon name="checkmark-circle" item-start></ion-icon>
       Producto en exceso
     </button>
-    <button ion-item (click)="itemTapped($event, esp)">
+    <button ion-item (click)="itemTapped($event, 'out')">
       <ion-icon name="alert" item-start></ion-icon>
       Producto agotados
     </button>

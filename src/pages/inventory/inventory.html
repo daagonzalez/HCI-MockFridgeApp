@@ -1,9 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Inventario</ion-title>
   </ion-navbar>
   </ion-header>
 <ion-content>
@@ -20,48 +17,15 @@
     </ion-col>
   </ion-row>
   <!-- Header -->
-  <ion-row>
-    <ion-col>
-      Tomate <ion-icon name="warning"></ion-icon>
+  <ion-row *ngFor="let item of items">
+    <ion-col *ngIf="item.visible">
+      {{item.product}} <ion-icon name={{setIcon(item.currentAmount,item.usualAmount)}}></ion-icon>
     </ion-col>
-    <ion-col>
-      1.0 Kg
+    <ion-col *ngIf="item.visible">
+      {{item.currentAmount}} {{item.unit}}
     </ion-col>
-    <ion-col>
-      1.5 Kg
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      Cebolla <ion-icon name="checkmark-circle"></ion-icon>
-    </ion-col>
-    <ion-col>
-      0.5 Kg
-    </ion-col>
-    <ion-col>
-      0.4 Kg
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      Queso <ion-icon name="warning"></ion-icon>
-    </ion-col>
-    <ion-col>
-      0.7 Kg
-    </ion-col>
-    <ion-col>
-      1.5 Kg
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      Cebollino <ion-icon name="alert"></ion-icon>
-    </ion-col>
-    <ion-col>
-      0.0 Kg
-    </ion-col>
-    <ion-col>
-      0.3 Kg
+    <ion-col *ngIf="item.visible">
+        {{item.usualAmount}} {{item.unit}}
     </ion-col>
   </ion-row>
 </ion-content>

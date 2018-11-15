@@ -13,6 +13,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.pages = [InventoryPage, TemperaturePage, RecipesPage];
+    sessionStorage.setItem("index","1");
   }
 
   toPage(newPageId) {

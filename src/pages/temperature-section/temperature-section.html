@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Temperatura: Verduras</ion-title>
   </ion-navbar>
 </ion-header>
@@ -21,7 +18,7 @@
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <button ion-button icon-start>
+    <button (click)="goBack()" ion-button icon-start>
       <ion-icon name="close"></ion-icon>Cancelar
     </button>
     <button ion-button icon-start float-end>
