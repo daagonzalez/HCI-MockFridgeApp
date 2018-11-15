@@ -7,33 +7,33 @@
   <ion-row>
     <ion-col>
       <ion-row>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col (click)='toTempSection("Congelador")' class="fridge" style="text-align:center">
           Congelador
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col (click)='toTempSection("Arroz")' class="fridge" style="text-align:center">
           Arroz
         </ion-col>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col (click)='toTempSection("Carne")' class="fridge" style="text-align:center">
           Carne
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col (click)='toTempSection("Pasta")' class="fridge" style="text-align:center">
           Pasta
         </ion-col>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col (click)='toTempSection("Refresco")' class="fridge" style="text-align:center">
           Refresco
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="fridge" style="text-align:center">
+        <ion-col (click)='toTempSection("Otros")' class="fridge" style="text-align:center">
           Otros
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col class="fridge" style="text-align:center" (click)="toTempSection()">
+        <ion-col (click)='toTempSection("Verduras")' class="fridge" style="text-align:center">
           Verduras
         </ion-col>
       </ion-row>
@@ -42,27 +42,27 @@
   <ion-row style="margin-top:1em;">
       <ion-col>
           <ion-row>
-            <ion-col class="fridge" style="text-align:center">
+            <ion-col (click)='toTempSection("Congelador")' class="fridge" style="text-align:center">
               Congelador
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="fridge" style="text-align:center">
+            <ion-col (click)='toTempSection("Huevos")' class="fridge" style="text-align:center">
               Huevos
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="fridge" style="text-align:center">
+            <ion-col (click)='toTempSection("Cervezas")' class="fridge" style="text-align:center">
               Cervezas
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="fridge" style="text-align:center">
+            <ion-col (click)='toTempSection("Jugos")' class="fridge" style="text-align:center">
               Jugos
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="fridge" style="text-align:center">
+            <ion-col (click)='toTempSection("Salsas")' class="fridge" style="text-align:center">
               Salsas
             </ion-col>
           </ion-row>
@@ -73,15 +73,15 @@
       <b>Temperatura General:</b>
     </ion-col>
     <ion-col col-1>
-        <button ion-button small icon-only color="light">
+        <button ion-button small icon-only color="light" (click)="reduceTemp()">
             <ion-icon name="remove"></ion-icon>
           </button>
     </ion-col>
-    <ion-col col-2>
-        <ion-input placeholder="-- C" value="2 C"></ion-input>
+    <ion-col col-2 style="margin-top:0.5em; text-align: center">
+        {{temperatureG}}° C
     </ion-col>
     <ion-col col-1>
-        <button ion-button small icon-only color="light">
+        <button ion-button small icon-only color="light" (click)="increaseTemp()">
             <ion-icon name="add"></ion-icon>
           </button>
     </ion-col>
@@ -90,10 +90,10 @@
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <!-- <button ion-button>
+    <button ion-button icon-start (click)="goBack()">
       <ion-icon name="close"></ion-icon>Cancelar
-    </button> -->
-    <button (click)="goBack()" ion-button icon-start float-end>
+    </button>
+    <button (click)="saveTemp()" ion-button icon-start float-end>
       <ion-icon name="checkmark"></ion-icon>Confirmar
     </button>
   </div>

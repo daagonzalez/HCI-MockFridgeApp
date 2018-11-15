@@ -10,22 +10,14 @@ export class TemperaturePage {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
+  temperatureG: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
+    if (localStorage.getItem("tempG") == null) {
+      this.temperatureG = 3;
+    }
+    else {
+      this.temperatureG = parseInt(localStorage.getItem("tempG"));
     }
   }
 
@@ -40,7 +32,22 @@ export class TemperaturePage {
     this.navCtrl.pop();
   };
 
-  toTempSection() {
-    this.navCtrl.push(TemperatureSectionPage);
+  toTempSection(itemSelected) {
+    this.navCtrl.push(TemperatureSectionPage,{
+      item: itemSelected
+    });
+  }
+
+  reduceTemp() {
+    this.temperatureG--;
+  }
+
+  increaseTemp() {
+    this.temperatureG++;
+  }
+
+  saveTemp() {
+    localStorage.setItem("tempG",this.temperatureG);
+    this.navCtrl.pop();
   }
 }
