@@ -20,17 +20,17 @@ export class InventoryPage {
     this.items.push({
       index: 0,
       product: "Tomate",
-      unit: "Kg",
-      currentAmount: 1.0,
-      usualAmount: 1.5,
+      unit: "grs",
+      currentAmount: 150,
+      usualAmount: 200,
       visible: true
     });
     this.items.push({
       index: 1,
       product: "Cebolla",
-      unit: "Kg",
-      currentAmount: 0.5,
-      usualAmount: 0.4,
+      unit: "grs",
+      currentAmount: 50,
+      usualAmount: 40,
       visible: true
     });
     this.items.push({
@@ -49,6 +49,71 @@ export class InventoryPage {
       usualAmount: 1.5,
       visible: true
     });
+    this.items.push({
+      index: 4,
+      product: "Huevos",
+      unit: "unid",
+      currentAmount: 12,
+      usualAmount: 12,
+      visible: true
+    });
+    this.items.push({
+      index: 5,
+      product: "Chile Dulce",
+      unit: "grs",
+      currentAmount: 0,
+      usualAmount: 150,
+      visible: true
+    });
+    this.items.push({
+      index: 6,
+      product: "Filet Mignon",
+      unit: "unid",
+      currentAmount: 2,
+      usualAmount: 2,
+      visible: true
+    });
+    this.items.push({
+      index: 7,
+      product: "Mantequilla",
+      unit: "cds",
+      currentAmount: 20,
+      usualAmount: 20,
+      visible: true
+    });
+    this.items.push({
+      index: 8,
+      product: "Brandy",
+      unit: "cds",
+      currentAmount: 80,
+      usualAmount: 100,
+      visible: true
+    });
+    this.items.push({
+      index: 9,
+      product: "Crema Dulce",
+      unit: "taz",
+      currentAmount: 0.5,
+      usualAmount: 4,
+      visible: true
+    });
+    this.items.push({
+      index: 10,
+      product: "Tocino",
+      unit: "grs",
+      currentAmount: 180,
+      usualAmount: 200,
+      visible: true
+    });
+    this.items.push({
+      index: 11,
+      product: "Parmigiano",
+      unit: "taz",
+      currentAmount: 1,
+      usualAmount: 1,
+      visible: true
+    });
+
   }
 
   setIcon(currentA, usualA) {
