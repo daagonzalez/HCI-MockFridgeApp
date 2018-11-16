@@ -6,40 +6,28 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'recipes-edit.html'
 })
 export class RecipesEditPage {
-  selectedItem: any;
-  icons: string[];
-  units: string;
-  units2: string;
-  items: Array<{title: string, note: string, icon: string}>;
+  selectedItem: {index: any, name: string, ingredients: Array<{name: string, amount: any, unit: string}>};
+  recipesD: any;
+  recipesL: any;
+  name: string[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-    this.units = "g";
-    this.units2 = "u";
-
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+    this.selectedItem = navParams.get('selectedItem');
+    this.recipesD = navParams.get("recipesD");
+    this.recipesL = navParams.get("recipesL");
+    this.name = [];
   }
 
   itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(RecipesEditPage, {
-      item: item
-    });
   }
 
   goBack() {
     this.navCtrl.pop();
-  };
+  }
+
+  saveChanges() {    
+    this.recipesD.selectedItem = this.selectedItem;
+    this.recipesL.items[this.selectedItem.index] = this.selectedItem;
+    this.navCtrl.pop();
+  }
 }

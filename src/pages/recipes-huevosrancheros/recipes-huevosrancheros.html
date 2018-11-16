@@ -1,41 +1,25 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Recetas: Huevos Rancheros</ion-title>
+    <ion-title>Recetas: {{selectedItem.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-label color="primary">Nombre</ion-label>
-      <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros"></ion-input>
+      <ion-input placeholder="Nombre de la receta" value="{{selectedItem.name}}"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>Ingredientes:</ion-label>
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-row>
+      <ion-row *ngFor="let item of selectedItem.ingredients">
         <ion-col>
-          Tomate
+          {{item.name}}
         </ion-col>
         <ion-col>
-          250 grs
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          Huevos
-        </ion-col>
-        <ion-col>
-          4 unid
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          Chile Dulce
-        </ion-col>
-        <ion-col>
-          50 grs
+          {{item.amount}} {{item.unit}}
         </ion-col>
       </ion-row>
     </ion-item>

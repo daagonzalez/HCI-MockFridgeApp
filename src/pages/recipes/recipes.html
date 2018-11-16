@@ -5,8 +5,8 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of recipes" (click)="itemTapped($event, item)">
-      {{item}}
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item.index)">
+      {{item.name}}
     </button>
   </ion-list>
 </ion-content>

@@ -1,69 +1,44 @@
 <ion-header>
     <ion-navbar>
-      <ion-title>Recetas: Huevos Rancheros</ion-title>
+      <ion-title>Recetas: {{selectedItem.name}}</ion-title>
     </ion-navbar>
   </ion-header>
   <ion-content>
     <ion-list>
       <ion-item>
         <ion-label color="primary">Nombre</ion-label>
-        <ion-input placeholder="Nombre de la receta" value="Huevos Rancheros"></ion-input>
+        <ion-input placeholder="Nombre de la receta" value="{{selectedItem.name}}" [(ngModel)]="selectedItem.name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" floating>Ingredientes:</ion-label>
         <ion-input></ion-input>
       </ion-item>
     </ion-list>
-    <ion-row>
-        <ion-col>
-          <ion-input placeholder="Producto" value="Tomate"></ion-input>
-        </ion-col>
-        <ion-col>
-            <ion-input placeholder="Cantidad" value="250"></ion-input>
-        </ion-col>
-        <ion-col>
-            <ion-select [(ngModel)]="units">
-              <ion-option value="g">grs</ion-option>
-              <ion-option value="u">unid</ion-option>
+    <ion-row *ngFor="let item of selectedItem.ingredients; let i = index">
+      <ion-col>
+          <ion-input placeholder="Producto" value="{{item.name}}" [(ngModel)]="selectedItem.ingredients[i].name"></ion-input>
+      </ion-col>
+      <ion-col>
+          <ion-input placeholder="Cantidad" value="{{item.amount}}" [(ngModel)]="selectedItem.ingredients[i].amount"></ion-input>
+      </ion-col>
+      <ion-col>
+          <ion-select [(ngModel)]="item.unit" selected [(ngModel)]="selectedItem.ingredients[i].unit">
+              <ion-option value="grs">grs</ion-option>
+              <ion-option value="unid">unid</ion-option>
+              <ion-option value="cds">cds</ion-option>
+              <ion-option value="taz">taz</ion-option>
+              <ion-option value="Kg">Kg</ion-option>
             </ion-select>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-            <ion-input placeholder="Producto" value="Huevos"></ion-input>
-        </ion-col>
-        <ion-col>
-            <ion-input placeholder="Cantidad" value="4"></ion-input>
-        </ion-col>
-        <ion-col>
-            <ion-select [(ngModel)]="units2" selected>
-                <ion-option value="g">grs</ion-option>
-                <ion-option value="u">unid</ion-option>
-              </ion-select>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-            <ion-input placeholder="Producto" value="Chile Dulce"></ion-input>
-        </ion-col>
-        <ion-col>
-            <ion-input placeholder="Cantidad" value="50"></ion-input>
-        </ion-col>
-        <ion-col>
-            <ion-select [(ngModel)]="units">
-                <ion-option value="g">grs</ion-option>
-                <ion-option value="u">unid</ion-option>
-              </ion-select>
-        </ion-col>
-      </ion-row>
+      </ion-col>
+    </ion-row>
   </ion-content>
   <ion-footer>
       <div class="btn-wrapper">
           <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-        <button ion-button icon-start>
+        <button (click)="goBack()" ion-button icon-start>
           <ion-icon name="close"></ion-icon>Cancelar
         </button>
-        <button ion-button icon-start float-end>
+        <button (click)="saveChanges()" ion-button icon-start float-end>
           <ion-icon name="checkmark"></ion-icon>Confirmar
         </button>
       </div>
