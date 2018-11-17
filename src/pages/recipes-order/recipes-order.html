@@ -14,20 +14,12 @@
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-row>
+      <ion-row *ngFor="let ingredient of missingIngredients">
         <ion-col>
-          Tomate
+          {{ingredient.name}}
         </ion-col>
         <ion-col>
-          100 grs
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          Huevos
-        </ion-col>
-        <ion-col>
-          2 unid
+          {{ingredient.amountMissing}} {{ingredient.unit}}
         </ion-col>
       </ion-row>
     </ion-item>

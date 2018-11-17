@@ -29,6 +29,8 @@ export class RecipesHuevosPage {
   }
   
   toPrepare() {
-    this.navCtrl.push(RecipesPreparePage);
+    this.navCtrl.push(RecipesPreparePage, {
+      recipe: this.selectedItem
+    });
   }
 }

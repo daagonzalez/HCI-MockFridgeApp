@@ -14,20 +14,12 @@
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-row>
+      <ion-row *ngFor="let ingredient of missingIngredients">
         <ion-col>
-          Tomate
+          {{ingredient.name}}
         </ion-col>
         <ion-col>
-          100 grs
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          Huevos
-        </ion-col>
-        <ion-col>
-          2 unid
+          {{ingredient.amountMissing}} {{ingredient.unit}}
         </ion-col>
       </ion-row>
     </ion-item>
@@ -40,7 +32,7 @@
         <ion-icon name="close"></ion-icon>Cancelar
     </button>
     <button (click)="toProviders()" ion-button icon-start float-end>
-      <ion-icon name="arrow-dropright"></ion-icon>Continuar
+      <ion-icon name="arrow-dropright"></ion-icon>Ordenar
     </button>
   </div>
 </ion-footer>
