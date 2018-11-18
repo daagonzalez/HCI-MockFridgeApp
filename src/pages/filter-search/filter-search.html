@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Filtrar por: Producto en específico</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Nombre del producto</ion-label>
+      <ion-input placeholder="Búsqueda" value="{{selectedItem}}" [(ngModel)]="selectedItem"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div class="btn-wrapper">
+      <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
+    <!-- <button (click)="goBack()" ion-button icon-start>
+      <ion-icon name="close"></ion-icon>Cancelar
+    </button> -->
+    <button (click)="search()" ion-button icon-start float-end>
+      <ion-icon name="search"></ion-icon>Buscar
+    </button>
+  </div>
+</ion-footer>

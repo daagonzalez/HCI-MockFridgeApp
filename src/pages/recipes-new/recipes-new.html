@@ -7,7 +7,7 @@
   <ion-list>
     <ion-item>
       <ion-label color="primary">Nombre</ion-label>
-      <ion-input placeholder="Nombre de la receta"></ion-input>
+      <ion-input placeholder="Nombre de la receta" value="{{newRecipe.name}}" [(ngModel)]="newRecipe.name"></ion-input>
     </ion-item>
   </ion-list>
   <ion-row>
@@ -15,57 +15,52 @@
       <strong>Ingredientes:</strong>
     </ion-col>
     <ion-col col-md-1>
-      <button ion-button small icon-only color="light">
+      <button (click)="newIngredient()" ion-button icon-only color="light">
         <ion-icon name="create"></ion-icon>
       </button>
     </ion-col>
     <ion-col col-md-1>
-        <button ion-button small icon-only color="light">
+        <button (click)="newVoiceIngredient()" ion-button icon-only color="light">
           <ion-icon name="mic"></ion-icon>
         </button>
       </ion-col>
       <ion-col col-md-1>
-          <button ion-button small icon-only color="light">
+          <button (click)="newPictureIngredient()" ion-button icon-only color="light">
             <ion-icon name="camera"></ion-icon>
           </button>
         </ion-col>
   </ion-row>
-  <ion-list>
-    <ion-item>
-      <ion-row>
+      <ion-row *ngFor="let ingredient of newRecipe.ingredients; let i = index">
         <ion-col>
-          Tomate
+          <ion-input placeholder="Producto" value="{{ingredient.name}}" [(ngModel)]="newRecipe.ingredients[i].name"></ion-input>
         </ion-col>
         <ion-col>
-          250 grs
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          Huevos
+            <ion-input placeholder="Cantidad" value="{{ingredient.amount}}" [(ngModel)]="newRecipe.ingredients[i].amount"></ion-input>
         </ion-col>
         <ion-col>
-          4 unid
+            <ion-select [(ngModel)]="ingredient.unit" selected [(ngModel)]="newRecipe.ingredients[i].unit">
+                <ion-option value="grs">grs</ion-option>
+                <ion-option value="unid">unid</ion-option>
+                <ion-option value="cds">cds</ion-option>
+                <ion-option value="taz">taz</ion-option>
+                <ion-option value="Kg">Kg</ion-option>
+              </ion-select>
         </ion-col>
-      </ion-row>
-      <ion-row>
         <ion-col>
-          Chile Dulce
-        </ion-col>
-        <ion-col>
-          50 grs
+          <button ion-button icon-only (click)="removeIngredient(ingredient)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+            &nbsp;
+          </button>
         </ion-col>
       </ion-row>
-    </ion-item>
-  </ion-list>
 </ion-content>
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <button ion-button icon-start>
+    <!-- <button ion-button icon-start>
         <ion-icon name="undo"></ion-icon>Deshacer
-    </button>
-    <button ion-button icon-start float-end>
+    </button> -->
+    <button (click)="saveRecipe()" ion-button icon-start float-end>
       <ion-icon name="checkmark"></ion-icon>Guardar
     </button>
   </div>

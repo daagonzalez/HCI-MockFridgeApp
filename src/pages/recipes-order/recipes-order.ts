@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Dialogs } from '@ionic-native/dialogs';
 
 @Component({
   selector: 'recipes-order',
@@ -9,7 +10,7 @@ export class RecipesOrderPage {
   selectedItem: any;
   missingIngredients: Array<{name: string, amountMissing: any, unit: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dialogs: Dialogs) {
     this.missingIngredients = navParams.get('missingIngredients');
     this.selectedItem = navParams.get('item');
   }
@@ -19,6 +20,7 @@ export class RecipesOrderPage {
   }
 
   toHome() {
+    this.dialogs.alert("Se ha realizado la orden","Orden Realizada","Aceptar");
     this.navCtrl.goToRoot(null);
   }
 }

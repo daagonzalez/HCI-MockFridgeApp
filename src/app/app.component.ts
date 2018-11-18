@@ -16,6 +16,7 @@ import { RecipesPreparePage } from '../pages/recipes-prepare/recipes-prepare';
 import { RecipesProviderPage } from '../pages/recipes-provider/recipes-provider';
 import { RecipesOrderPage } from '../pages/recipes-order/recipes-order';
 import { RecipesNewPage } from '../pages/recipes-new/recipes-new';
+import { FilterSearchPage } from '../pages/filter-search/filter-search';
 
 @Component({
   templateUrl: 'app.html'
@@ -44,7 +45,8 @@ export class MyApp {
       { title: 'Recetas - Preparar', component: RecipesPreparePage },
       { title: 'Recetas - Proveedores', component: RecipesProviderPage },
       { title: 'Recetas - Ordenar', component: RecipesOrderPage },
-      { title: 'Recetas - Nueva', component: RecipesNewPage }
+      { title: 'Recetas - Nueva', component: RecipesNewPage },
+      { title: 'Invetario - Filtro - Búsqueda', component: FilterSearchPage }
     ];
 
   }

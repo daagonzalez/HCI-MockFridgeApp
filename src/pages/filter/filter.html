@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <button ion-item (click)="itemTapped($event, 'spc')">
+    <button ion-item (click)="toSearch()">
       <ion-icon name="search" item-start></ion-icon>
       Producto en específico
     </button>
@@ -20,6 +20,10 @@
     <button ion-item (click)="itemTapped($event, 'out')">
       <ion-icon name="alert" item-start></ion-icon>
       Producto agotados
+    </button>
+    <button ion-item (click)="itemTapped($event, 'none')">
+      <ion-icon name="close" item-start></ion-icon>
+      Sin filtro
     </button>
   </ion-list>
 </ion-content>

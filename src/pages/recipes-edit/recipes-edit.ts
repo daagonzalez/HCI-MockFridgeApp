@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Dialogs } from '@ionic-native/dialogs';
 
 @Component({
   selector: 'recipes-edit',
@@ -11,7 +12,7 @@ export class RecipesEditPage {
   recipesL: any;
   name: string[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dialogs: Dialogs) {
     this.selectedItem = navParams.get('selectedItem');
     this.recipesD = navParams.get("recipesD");
     this.recipesL = navParams.get("recipesL");
@@ -28,6 +29,7 @@ export class RecipesEditPage {
   saveChanges() {    
     this.recipesD.selectedItem = this.selectedItem;
     this.recipesL.items[this.selectedItem.index] = this.selectedItem;
+    this.dialogs.alert("Se ha guardado el cambio correctamente","Cambio Guardado","Aceptar");
     this.navCtrl.pop();
   }
 }

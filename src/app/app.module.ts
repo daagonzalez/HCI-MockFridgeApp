@@ -16,8 +16,13 @@ import { RecipesPreparePage } from '../pages/recipes-prepare/recipes-prepare';
 import { RecipesProviderPage } from '../pages/recipes-provider/recipes-provider';
 import { RecipesOrderPage } from '../pages/recipes-order/recipes-order';
 import { RecipesNewPage } from '../pages/recipes-new/recipes-new';
+import { FilterSearchPage } from '../pages/filter-search/filter-search';
+import { ProvidersPage } from '../pages/providers/providers';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { Dialogs } from '@ionic-native/dialogs';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipesPreparePage,
     RecipesProviderPage,
     RecipesOrderPage,
-    RecipesNewPage
+    RecipesNewPage,
+    FilterSearchPage,
+    ProvidersPage
   ],
   imports: [
     BrowserModule,
@@ -55,12 +62,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipesPreparePage,
     RecipesProviderPage,
     RecipesOrderPage,
-    RecipesNewPage
+    RecipesNewPage,
+    FilterSearchPage,
+    ProvidersPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    SpeechRecognition,
+    Dialogs
   ]
 })
 export class AppModule {}

@@ -136,6 +136,13 @@ export class RecipesPreparePage {
           });
         }
       }
+      else {
+        this.missingIngredients.push({
+          name: ingredient.name,
+          amountMissing: ingredient.amount,
+          unit: ingredient.unit
+        });
+      }
     });
   }
 

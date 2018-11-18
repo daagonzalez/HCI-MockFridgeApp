@@ -102,6 +102,13 @@ export class RecipesPage {
           unit: "taz"
         }]
       });
+
+      if (sessionStorage.getItem("newRecipes") != null) {
+        var arrRec = JSON.parse(sessionStorage.getItem("newRecipes"));
+        arrRec.forEach(newRecipe => {
+          this.items.push(newRecipe);
+        });
+      }
   }
 
   itemTapped(event, item) {
@@ -116,6 +123,8 @@ export class RecipesPage {
   }
 
   toNew() {
-    this.navCtrl.push(RecipesNewPage);
+    this.navCtrl.push(RecipesNewPage, {
+      recipesL: this
+    });
   }
 }

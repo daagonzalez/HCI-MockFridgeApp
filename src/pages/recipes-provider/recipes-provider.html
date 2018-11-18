@@ -5,8 +5,10 @@
 </ion-header>
 <ion-content>
   <ion-list>
+    <ion-item>
+      <strong>Escoja el proveedor para la compra</strong>
+    </ion-item>
     <button ion-item *ngFor="let provider of providers" (click)="itemTapped($event, provider.title)">
-      <ion-icon [name]="provider.icon" item-end></ion-icon>
       {{provider.title}}
     </button>
   </ion-list>
@@ -14,9 +16,9 @@
 <ion-footer>
   <div class="btn-wrapper">
       <button (click)="goBack()" ion-button icon-start float-start><ion-icon name="arrow-round-back"></ion-icon>Atrás</button>
-    <button ion-button icon-start><ion-icon name="close"></ion-icon>Cancelar</button>
-    <button ion-button icon-start float-end>
+    <button (click)="goBack()" ion-button icon-start float-end><ion-icon name="close"></ion-icon>Cancelar</button>
+    <!-- <button ion-button icon-start float-end>
       <ion-icon name="add"></ion-icon>Nuevo proveedor
-    </button>
+    </button> -->
   </div>
 </ion-footer>

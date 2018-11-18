@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TemperatureSectionPage } from '../temperature-section/temperature-section';
+import { Dialogs } from '@ionic-native/dialogs';
 
 @Component({
   selector: 'temperature-global',
@@ -12,7 +13,7 @@ export class TemperaturePage {
   items: Array<{title: string, note: string, icon: string}>;
   temperatureG: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dialogs: Dialogs) {
     if (localStorage.getItem("tempG") == null) {
       this.temperatureG = 3;
     }
@@ -48,6 +49,7 @@ export class TemperaturePage {
 
   saveTemp() {
     localStorage.setItem("tempG",this.temperatureG);
+    this.dialogs.alert("Se ha guardado el cambio correctamente","Cambio Guardado","Aceptar");
     this.navCtrl.pop();
   }
 }
