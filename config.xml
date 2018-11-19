@@ -85,5 +85,5 @@
     <plugin name="cordova-plugin-camera" spec="~4.0.3" />
     <plugin name="cordova-plugin-speechrecognition" spec="~1.1.2" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
-    <engine name="android" spec="^7.1.2" />
+    <engine name="android" spec="^6.3.0" />
 </widget>
